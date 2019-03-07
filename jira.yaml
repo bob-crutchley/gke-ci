@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jira
+spec:
+  containers:
+  - name: jira
+    image: bobcrutchley/jira:latest
+    readinessProbe:
+      httpGet:
+      path: /jira/
+      port: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jira
+spec:
+  selector:
+    app: jira
+  ports: 
+  - protocol: TCP
+    port: 8080
+  type: NodePort
+
