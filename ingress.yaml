@@ -24,6 +24,14 @@ spec:
         backend:
           serviceName: jenkins
           servicePort: 8080
+      - path: /jira
+        backend:
+          serviceName: jira
+          servicePort: 8080
+      - path: /jira/*
+        backend:
+          serviceName: jira
+          servicePort: 8080
       - path: /sonarqube
         backend:
           serviceName: sonarqube
