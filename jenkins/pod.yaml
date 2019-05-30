@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nexus
+  name: jenkins
   labels: 
-    app: nexus
+    app: jenkins
 spec:
    containers:
    - name: jenkins
